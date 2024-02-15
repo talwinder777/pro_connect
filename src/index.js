@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import ExpertSignupPage from './ExpertSignupPage';
 import reportWebVitals from './reportWebVitals';
+import LandingSignupPage from './LandingSignupPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <LandingSignupPage />
   </React.StrictMode>
 );
 

@@ -1,0 +1,69 @@
+/* LandingSignupPage.css */
+.landing-signup {
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1f1f1f;
+    /* Matt black background color */
+    color: #fff;
+    /* White text color */
+}
+
+.header-left {
+    flex: 0;
+}
+
+.header-right {
+    flex: 1;
+    text-align: right;
+}
+
+.company-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* .company-logo {
+    height: 40px;
+} */
+
+.main-content {
+    margin-top: 100px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 30px 50px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.expert-button {
+    background-color: #669966;
+    /* Parrot green background color */
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    /* Black text color */
+    margin-right: 20px;
+}
+
+.seeking-button {
+    background-color: #669966;
+    /* Parrot green background color */
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    /* Black text color */
+}
