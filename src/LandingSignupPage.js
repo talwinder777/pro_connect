@@ -23,7 +23,7 @@ function LandingSignupPage() {
                 <h2>Are you an expert or seeking help from an expert?</h2>
                 <div className="buttons-container">
                     <button className="expert-button" onClick={() => history('/expert-signup')}>I am the expert.</button>
-                    <button className="seeking-button">Seeking expert.</button>
+                    <button className="seeking-button" onClick={() => history('/customer-signup')} >Seeking expert.</button>
                 </div>
             </div>
         </div>

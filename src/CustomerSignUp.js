@@ -63,9 +63,6 @@ const SignUpForm = () => {
 
     return (
         <div className="expert-signup">
-            <div className="sign-in-container right-aligned">
-                <button className="submit-button" onClick={() => console.log("Sign In clicked")}>Sign In</button>
-            </div>
             <h2 className="sign-up-heading">Sign Up</h2>
             <form onSubmit={handleFormSubmit} className="signup-form">
                 <div className="form-group">
