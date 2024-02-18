@@ -2,6 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingSignupPage.css'; // Import CSS file for styling
+
 // import logo from './expert-io-logo.png'; // Import company logo image
 
 function LandingSignupPage() {
@@ -13,9 +14,7 @@ function LandingSignupPage() {
                 <div className="header-left">
                     <span className="company-name">Expert.io</span>
                 </div>
-                <div className="header-right">
-                    Already have an account?&nbsp;<a href="/signin" style={{ color: '#669966' }}> Sign in</a>
-                </div>
+                <button className="sign-in-button" onClick={() => history('/expert-signin')}>Already have an account? <span className="sign-in-text">Sign in</span></button>
             </header>
 
             {/* Main content */}
