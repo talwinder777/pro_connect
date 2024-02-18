@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import ExpertSignupPage from './ExpertSignupPage';
+// import ExpertSignupPage from './ExpertSignupPage';
 import reportWebVitals from './reportWebVitals';
-import LandingSignupPage from './LandingSignupPage';
+// import LandingSignupPage from './LandingSignupPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <LandingSignupPage />
+    <App />
   </React.StrictMode>
 );
 

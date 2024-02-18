@@ -1,9 +1,11 @@
 // LandingSignupPage.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './LandingSignupPage.css'; // Import CSS file for styling
 // import logo from './expert-io-logo.png'; // Import company logo image
 
 function LandingSignupPage() {
+    const history = useNavigate();
     return (
         <div className="landing-signup">
             {/* Header */}
@@ -20,7 +22,7 @@ function LandingSignupPage() {
             <div className="main-content">
                 <h2>Are you an expert or seeking help from an expert?</h2>
                 <div className="buttons-container">
-                    <button className="expert-button">I am the expert.</button>
+                    <button className="expert-button" onClick={() => history('/expert-signup')}>I am the expert.</button>
                     <button className="seeking-button">Seeking expert.</button>
                 </div>
             </div>
