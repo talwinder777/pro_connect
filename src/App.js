@@ -11,10 +11,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<LandingSignupPage />} />
+        <Route exact path="/" element={<HomePage />} />
         <Route path="/expert-signup" element={<ExpertSignupPage />} />
         <Route path="/customer-signup" element={<CustomerSignUp />} />
         <Route path="/expert-signin" element={<SignInForm />} />
+        <Route path="/get-started" element={<LandingSignupPage />} />
       </Routes>
     </Router>
   );

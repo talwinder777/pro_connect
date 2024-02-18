@@ -1,8 +1,7 @@
 // LandingSignupPage.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './LandingSignupPage.css'; // Import CSS file for styling
-
+import './LandingSignupPage.css';
 // import logo from './expert-io-logo.png'; // Import company logo image
 
 function LandingSignupPage() {
