@@ -1,0 +1,53 @@
+/* SignIn.css */
+
+.expert-signin {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh; /* Adjust as needed */
+}
+
+.sign-in-heading {
+    color: #669966;
+}
+
+.signin-form {
+    width: 80%; /* Adjust as needed */
+    max-width: 300px; /* Set maximum width */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    color: #669966;
+}
+
+input {
+    width: 100%; /* Full width */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+.submit-button {
+    width: 50%; /* Full width */
+    padding: 15px 0;
+    border: none;
+    border-radius: 6px;
+    background-color: #669966;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 85px;
+}
