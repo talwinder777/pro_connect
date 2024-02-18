@@ -31,25 +31,6 @@ const ContentBlock1 = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className="icon-container">
-                <div className="icon-wrapper">
-                    <img src="https://gun.io/wp-content/uploads/2023/07/amazon.png" alt="Amazon" />
-                </div>
-                <div className="icon-wrapper">
-                    <img src="https://gun.io/wp-content/uploads/2023/07/tmf.png" alt="TMF" />
-                </div>
-                <div className="icon-wrapper">
-                    <img src="https://gun.io/wp-content/uploads/2023/07/dribbleup.png" alt="DribbleUp" />
-                </div>
-                <div className="icon-wrapper">
-                    <img src="https://gun.io/wp-content/uploads/2023/07/tesla.png" alt="Tesla" />
-                </div>
-                <div className="icon-wrapper">
-                    <img src="https://gun.io/wp-content/uploads/2023/07/cisco.png" alt="Cisco" />
-                </div>
-            </div> */}
-
-            {/* Other elements */}
         </section>
 
 
