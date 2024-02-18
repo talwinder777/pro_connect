@@ -1,0 +1,109 @@
+.content-block {
+    display: flex;
+    height: 300%;
+    /* Adjust height as needed */
+    position: relative;
+    /* Make sure the absolute positioning works */
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Ensure the image is behind other content */
+    object-fit: cover;
+    /* Ensure the image covers the entire container */
+}
+
+.content-container {
+    flex: 1;
+    padding: 100px;
+    /* Adjust padding as needed */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    /* Adjust gap as needed */
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+h1 {
+    font-size: 3.5rem;
+    /* Adjust font size as needed */
+    line-height: 1.5;
+    /* Adjust line height as needed */
+    word-wrap: break-word;
+    /* Ensure long words wrap to next line */
+    /* margin: 0; */
+}
+
+p {
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+button {
+    background-color: #8ad68a;
+    /* Set button background color */
+    color: black;
+    /* Set button text color */
+    font-size: 1.2rem;
+    font-weight: bold;
+    /* Adjust font size as needed */
+    padding: 10px 50px;
+    /* Adjust padding as needed */
+    border: none;
+    /* Remove button border */
+    border-radius: 5px;
+    /* Add border radius for rounded corners */
+    cursor: pointer;
+    /* Set cursor to pointer on hover */
+    transition: background-color 0.3s ease;
+    /* Add transition for smooth color change */
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #558855;
+    /* Darken button color on hover */
+}
+
+.icon-container {
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* Ensure full width */
+    margin-bottom: 20px;
+    /* Adjust margin from the bottom */
+}
+
+.icon-wrapper {
+    background-color: #333;
+    /* Dark background color */
+    width: 60px;
+    /* Set width of each icon wrapper */
+    height: 60px;
+    /* Set height of each icon wrapper */
+    margin: 0 5px;
+    /* Adjust margin between icons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    /* Make icons circular */
+}
+
+.icon-wrapper img {
+    width: 100%;
+    /* Ensure the image fills the icon wrapper */
+    height: auto;
+    /* Maintain aspect ratio */
+}
