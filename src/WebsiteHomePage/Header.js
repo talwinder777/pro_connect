@@ -20,6 +20,10 @@ const Header = () => {
     return (
         <header>
             <nav className="menu">
+                <a className="block" href="https://gun.io/">
+                    <img className="h-12 md:h-14 lg:h-[70px] w-auto" src="https://gun.io/wp-content/uploads/2023/07/gunio-logo-text-alpha.png" alt="Expert.io" height="70" width="200" />
+                </a>
+                
                 <ul className="active">
                     <li><a href="./Header">How it Works</a></li>
                     <li><a href="./Header">Blog</a></li>
