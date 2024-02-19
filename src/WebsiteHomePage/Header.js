@@ -7,15 +7,27 @@ import { useNavigate } from 'react-router-dom';
 const Header = () => {
     const history = useNavigate();
     useEffect(() => {
-        $(document).ready(function() {
-            $('.toggle-nav').click(function(e) {
-                $(this).toggleClass('active');
-                $('.menu ul').toggleClass('active');
+        const toggleMenu = () => {
+            $('.toggle-nav').toggleClass('active');
+            $('.menu ul').toggleClass('active');
+        };
 
+        const initializeToggle = () => {
+            $('.toggle-nav').click(function(e) {
+                toggleMenu();
                 e.preventDefault();
             });
-        });
-    }, []);
+        };
+
+        initializeToggle();
+
+        // Cleanup logic
+        return () => {
+            $('.toggle-nav').off('click');
+        };
+    }, [history]);
+
+
 
     return (
         <header>
@@ -23,7 +35,7 @@ const Header = () => {
                 <a className="block" href="https://gun.io/">
                     <img className="h-12 md:h-14 lg:h-[70px] w-auto" src="https://gun.io/wp-content/uploads/2023/07/gunio-logo-text-alpha.png" alt="Expert.io" height="70" width="200" />
                 </a>
-                
+
                 <ul className="active">
                     <li><a href="./Header">How it Works</a></li>
                     <li><a href="./Header">Blog</a></li>
