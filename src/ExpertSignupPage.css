@@ -19,6 +19,7 @@ label {
     display: block;
     font-weight: bold;
     color: #669966;
+    text-align: left;
     /* Dull green color for label */
 }
 

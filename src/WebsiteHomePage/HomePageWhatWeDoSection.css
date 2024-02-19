@@ -1,0 +1,48 @@
+.what-we-do-section {
+    padding: 100px;
+    background-color: #222627;
+}
+
+.what-we-do {
+    color: #90F2B1;
+}
+
+.container {
+    display: flex;
+
+    /* flex-wrap: wrap; */
+    /* Allow items to wrap to the next line */
+}
+
+.column {
+    flex: 1;
+    /* Each column takes up equal space */
+    width: 50%;
+    /* Each column takes up half of the container */
+}
+
+.mini-container {
+    /* Styles for the mini-container */
+    padding: 10%;
+}
+
+.what-we-do-section-icons {
+    /* Adjust width and height to match the SVG dimensions */
+    width: 64px;
+    height: 64px;
+
+    /* Adjust fill color to match the SVG fill color */
+    fill: #90F2B1;
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        flex-direction: column;
+        /* Stack columns vertically on smaller screens */
+    }
+
+    .column {
+        width: 100%;
+        /* Each column takes up the full width on smaller screens */
+    }
+}
