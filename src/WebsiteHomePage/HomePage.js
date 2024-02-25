@@ -1,8 +1,8 @@
 import React from 'react';
 import ContentBlock1 from './HomePageContentBlock1';
-import Header from "./Header"; // Assuming ContentBlock1 component is in a separate file
-// import ContentBlock1 from './HomePageContentBlock1'; // Assuming ContentBlock1 component is in a separate file
 import WhatWeDoSection from './HomePageWhatWeDoSection';
+import Header from "./Header";
+import Footer from "./Footer"; // Assuming ContentBlock1 component is in a separate file
 
 const HomePage = () => {
     return (
@@ -18,6 +18,7 @@ const HomePage = () => {
             </main>
             <footer>
                 {/* Add footer content here */}
+                <Footer />
             </footer>
         </div>
     );

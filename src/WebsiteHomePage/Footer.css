@@ -1,0 +1,50 @@
+/* Footer Container */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+    justify-content: space-between; /* Distribute items evenly across the container */
+    padding: 20px; /* Add padding around the container */
+    background-color: #222627; /* Set background color */
+}
+
+/* Footer Section */
+.footer-section {
+    flex: 1; /* Allow sections to grow and shrink equally */
+    margin-right: 20px; /* Add spacing between sections */
+    max-width: calc(25% - 20px); /* Limit maximum width of each section */
+}
+
+/* Footer Link List */
+.footer-list {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+}
+
+/* Footer Menu Items */
+.footer-menu-items {
+    margin-bottom: 5px; /* Add spacing between menu items */
+}
+
+/* Footer Link */
+.footer-menu-items a {
+    color: #fff; /* Set link color */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Footer Link Hover */
+.footer-menu-items a:hover {
+    color: #007bff; /* Change link color on hover */
+}
+
+/* Footer Input Field */
+.footer-email-info input {
+    width: calc(100% - 30px); /* Set input field width to fill the container */
+    padding: 8px; /* Add padding to the input field */
+    margin-bottom: 10px; /* Add spacing between input field and error message */
+}
+
+/* Footer Error Message */
+.footer-error-message {
+    color: red; /* Set error message color */
+    font-size: 12px; /* Set error message font size */
+}
