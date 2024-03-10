@@ -5,6 +5,9 @@ import ExpertSignupPage from './ExpertSignupPage';
 import CustomerSignUp from './CustomerSignUp';
 import SignInForm from "./SignIn";
 import HomePage from './WebsiteHomePage/HomePage';
+import AboutUs from './WebsiteHomePage/AboutUs';
+import FindExperts from './WebsiteHomePage/FindExpert';
+
 
 // FOR TESTING YOU COMPONENT YOU CAN CHANGE LINE NUMBER 15 TO YOUR COMPONENT
 function App() {
@@ -15,7 +18,7 @@ function App() {
         <Route path="/expert-signup" element={<ExpertSignupPage />} />
         <Route path="/customer-signup" element={<CustomerSignUp />} />
         <Route path="/expert-signin" element={<SignInForm />} />
-        <Route path="/get-started" element={<LandingSignupPage />} />
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
     </Router>
   );
