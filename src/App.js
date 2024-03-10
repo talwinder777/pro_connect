@@ -6,8 +6,6 @@ import CustomerSignUp from './CustomerSignUp';
 import SignInForm from "./SignIn";
 import HomePage from './WebsiteHomePage/HomePage';
 import AboutUs from './WebsiteHomePage/AboutUs';
-import FindExperts from './WebsiteHomePage/FindExpert';
-
 
 // FOR TESTING YOU COMPONENT YOU CAN CHANGE LINE NUMBER 15 TO YOUR COMPONENT
 function App() {
