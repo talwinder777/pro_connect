@@ -1,0 +1,68 @@
+.expert {
+    display: flex;
+    flex-direction: row;
+    /* Ensure it's displayed as a row */
+    margin-bottom: 20px;
+    /* Add some margin between each expert */
+}
+
+.expert-column-1 {
+    flex: 0 0 30%;
+    flex-direction: column;
+    /* Set the first column to take 30% of the available space */
+    padding-right: 20px;
+    /* Add some space between columns */
+}
+
+.expert-column-2 {
+    flex: 1;
+    /* Let the column take the remaining space */
+    padding: 20px;
+    /* Padding inside the column */
+    overflow-y: auto;
+    /* Enable vertical scrolling if needed */
+    display: flex;
+    /* Use flexbox */
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next row */
+    gap: 20px;
+    /* Add spacing between items */
+}
+
+.expert-details-container {
+    flex: 1;
+    /* Each detail container takes equal space */
+    max-width: calc(50% - 20px);
+    /* Each detail container should take 50% width minus padding */
+    margin-bottom: 20px;
+    /* Spacing between rows */
+}
+
+
+.expert img {
+    width: 100%;
+    /* Make the image fill its container */
+    height: 90%;
+    /* Set the height of the image to 90% of the column height */
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    /* Ensure the image covers the container */
+}
+
+.expert-link {
+    margin-top: 10px;
+    /* Add some space between image and link */
+    color: #669966;
+    text-align: center;
+    /* Set link color */
+}
+
+.expert-link a {
+    color: #669966;
+    /* Set link color */
+}
+
+h3 {
+    color: #669966;
+}

@@ -12,7 +12,7 @@ const Header = () => {
         };
 
         const initializeToggle = () => {
-            $('.toggle-nav').click(function(e) {
+            $('.toggle-nav').click(function (e) {
                 toggleMenu();
                 e.preventDefault();
             });
@@ -36,10 +36,8 @@ const Header = () => {
                 </a>
 
                 <ul className="active">
-                    {/*<li><a href="/about-us">How it Works</a></li>*/}
-                    {/*<li><a href="./Header">Blog</a></li>*/}
                     <li><a href="./about-us">About Us</a></li>
-                    <li><a href="./find-expert">Find Expert</a></li>
+                    <li><a href="./find-expert" onClick={() => history('/find-expert')}>Find Expert</a></li>
                 </ul>
                 <div className="menu-buttons">
                     <button className="btn-outline" onClick={() => history('/expert-signin')}>Sign In</button>
