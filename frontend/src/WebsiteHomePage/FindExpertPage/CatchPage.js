@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import axios from 'axios';
 import './CatchPage.css'; // Import CSS file for styling
 
 const CatchPage = () => {
@@ -10,11 +11,26 @@ const CatchPage = () => {
         setEmail(event.target.value);
     };
 
-    const handleJoinButtonClick = (type) => {
+    const handleJoinButtonClick = async (type) => {
         setUserType(type);
-        // Here you can add code to send the email and user type to your backend or Google Sheets
-        console.log('Email:', email);
-        console.log('User Type:', type);
+        try {
+            const formData = new FormData();
+            formData.append('email', email);
+            let endpoint;
+            if (type === 'Expert') {
+                endpoint = 'http://localhost:8000/save_user_data/save_expert_email/';
+            } else if (type === 'Client') {
+                endpoint = 'http://localhost:8000/save_user_data/save_client_email/';
+            }
+
+            await axios.post(endpoint, formData);
+
+            // Handle success
+            console.log('Data submitted successfully');
+        } catch (error) {
+            // Handle error
+            console.error('Error submitting data:', error);
+        }
     };
     return (
         <div className="catch-page">
@@ -24,7 +40,7 @@ const CatchPage = () => {
             <div className="email-field">
                 <input type="email" placeholder="Enter your email" value={email} onChange={handleEmailChange} />
                 <div className="join-button">
-                    <button className="join-button1" onClick={() => handleJoinButtonClick('Advice Seeker')}>Join as Advice Seeker</button>
+                    <button className="join-button1" onClick={() => handleJoinButtonClick('Client')}>Join as Advice Seeker</button>
                     <button className="join-button2" onClick={() => handleJoinButtonClick('Expert')}>Join as Expert</button>
                 </div>
 

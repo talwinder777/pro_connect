@@ -1,5 +1,34 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Virtual Environment
+expert-finder/
+
+# Database
+*.sqlite3
+
+# Static files and media
+static/
+media/
+migrations/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Compiled files
+__pycache__/
+*.pyc
+
+# Secrets and configuration
+.env
+config/settings/local.py
+
+# IDE/Editor specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
 # dependencies
 /node_modules
 /.pnp
