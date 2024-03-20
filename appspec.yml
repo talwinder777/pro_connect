@@ -7,16 +7,16 @@ files:
 
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies.sh
+    - location: backend/scripts/install_dependencies.sh
       timeout: 300
       runas: root
 
   ApplicationStart:
-    - location: scripts/start_apache2.sh
+    - location: backend/scripts/start_apache2.sh
       timeout: 300
       runas: root
 
   ApplicationStop:
-    - location: scripts/stop_apache2.sh
+    - location: backend/scripts/stop_apache2.sh
       timeout: 300
       runas: root
