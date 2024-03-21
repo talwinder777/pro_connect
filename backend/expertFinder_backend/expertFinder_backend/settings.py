@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'expertFinder_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'seekexpert',
+        'USER': 'admin',
+        'PASSWORD': 'SeekExpertDBAdmin',
+        'HOST': 'seekexpert.czw8yai4ejbo.us-east-1.rds.amazonaws.com',
+        'PORT': '3306',  # or the port for your database engine
     }
 }
 
