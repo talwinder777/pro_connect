@@ -15,6 +15,9 @@ hooks:
     - location: backend/scripts/start_apache2.sh
       timeout: 300
       runas: root
+    - location: scripts/migrations.sh  # Script for applying Django migrations
+      timeout: 300
+      runas: root
 
   ApplicationStop:
     - location: backend/scripts/stop_apache2.sh
