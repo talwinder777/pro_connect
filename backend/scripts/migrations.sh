@@ -13,7 +13,7 @@ fi
 source "$VENV_PATH/bin/activate"
 
 # Change directory to your Django project directory
-cd /var/www/html/expertFinder_backend
+cd /var/www/html/
 
 # Install Django (if not already installed)
 pip install django
