@@ -10,6 +10,7 @@ expert-finder/
 static/
 media/
 migrations/
+frontend/node_modules
 
 # Logs and temporary files
 *.log
