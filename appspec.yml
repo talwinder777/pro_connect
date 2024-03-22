@@ -3,23 +3,10 @@ os: linux
 
 files:
   - source: backend/expertFinder_backend
-    destination: /var/www/html/
+    destination: /home/ubuntu/expertFinder_backend
 
 hooks:
   BeforeInstall:
     - location: backend/scripts/install_dependencies.sh
-      timeout: 300
-      runas: root
-
-  ApplicationStart:
-    - location: backend/scripts/start_apache2.sh
-      timeout: 300
-      runas: root
-    - location: backend/scripts/migrations.sh  # Script for applying Django migrations
-      timeout: 300
-      runas: root
-
-  ApplicationStop:
-    - location: backend/scripts/stop_apache2.sh
       timeout: 300
       runas: root
