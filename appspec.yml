@@ -7,11 +7,11 @@ files:
 
 permissions:
   - object: /backend/scripts/install_dependencies.sh
-    mode: 755
+    mode: 0755
     pattern: "**"
     owner: ubuntu
     group: ubuntu
-    
+
 hooks:
   BeforeInstall:
     - location: backend/scripts/install_dependencies.sh
