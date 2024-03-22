@@ -5,6 +5,13 @@ files:
   - source: backend/expertFinder_backend
     destination: /home/ubuntu/expertFinder_backend
 
+permissions:
+  - object: /backend/scripts/install_dependencies.sh
+    mode: 755
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
+    
 hooks:
   BeforeInstall:
     - location: backend/scripts/install_dependencies.sh
