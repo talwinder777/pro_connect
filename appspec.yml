@@ -7,7 +7,7 @@ files:
 
 permissions:
   - object: /backend/scripts/install_dependencies.sh
-    mode: 0755
+    mode: 755
     pattern: "**"
     owner: ubuntu
     group: ubuntu
