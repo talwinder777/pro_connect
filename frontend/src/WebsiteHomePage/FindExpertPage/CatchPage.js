@@ -18,9 +18,9 @@ const CatchPage = () => {
             formData.append('email', email);
             let endpoint;
             if (type === 'Expert') {
-                endpoint = 'http://localhost:8000/save_user_data/save_expert_email/';
+                endpoint = 'http://34.205.71.76/save_user_data/save_expert_email/';
             } else if (type === 'Client') {
-                endpoint = 'http://localhost:8000/save_user_data/save_client_email/';
+                endpoint = 'http://34.205.71.76/save_user_data/save_client_email/';
             }
 
             await axios.post(endpoint, formData);
