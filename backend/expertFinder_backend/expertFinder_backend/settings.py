@@ -28,6 +28,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['34.205.71.76']
 
+SECURE_SSL_REDIRECT = True
 
 # Application definition
 
