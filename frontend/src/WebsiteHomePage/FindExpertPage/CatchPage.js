@@ -85,7 +85,8 @@ const CatchPage = () => {
             {!showModal && <Waitlist />}
             {showModal && <Modal />}
         </div>
-    )
+    );
+};
 export default CatchPage;
 
 
