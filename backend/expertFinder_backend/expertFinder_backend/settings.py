@@ -33,7 +33,6 @@ SECURE_SSL_REDIRECT = True
 # Application definition
 
 INSTALLED_APPS = [
-    'corsheaders',
     'waitlist_data',
     'django.contrib.admin',
     'django.contrib.auth',
