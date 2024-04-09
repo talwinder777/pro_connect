@@ -1,12 +1,12 @@
 import os
 import pickle
 import base64
-import pandas as pd
 from email.mime.text import MIMEText
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
+from google.oauth2 import service_account
 import logging
 
 # Get a logger instance for the current module
@@ -17,6 +17,10 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import ExpertEmail, ClientEmail
 
+# Define the path to the service account key file
+SERVICE_ACCOUNT_FILE = "/home/ubuntu/seekexpert-f0c414e9a7a1.json"
+
+# Define the scopes for Gmail API
 SCOPES = ['https://www.googleapis.com/auth/gmail.send']
 
 @csrf_exempt
@@ -56,29 +60,15 @@ def send_message(service, user_id, message):
         logger.info('An error occurred: %s' % e)
         return None
 
+def get_credentials():
+    credentials = service_account.Credentials.from_service_account_file(
+        SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+    logger.debug(f"credentails are {credentials}\n")
+    return credentials
+
 def send_email(email):
-    logger.info("-------------------in send email function-------------------")
-    creds = None
-    # The file token.pickle stores the user's access and refresh tokens, and is
-    # created automatically when the authorization flow completes for the first
-    # time.
-    if os.path.exists('token.pickle'):
-        logger.info("------------token file found in directory-------------")
-        with open('token.pickle', 'rb') as token:
-            creds = pickle.load(token)
-    # If there are no (valid) credentials available, let the user log in.
-    if not creds or not creds.valid:
-        logger.info("---------------token file exists alreay--------------")
-        if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
-        else:
-            flow = InstalledAppFlow.from_client_secrets_file(
-                'credentials.json', SCOPES)
-            creds = flow.run_local_server(port=0)
-        # Save the credentials for the next run
-        with open('token.pickle', 'wb') as token:
-            pickle.dump(creds, token)
-    logger.info("----------going to call the create_message function with service--------------")
+    credentials = get_credentials()
+    creds = credentials.with_subject("admin@multiplyfocus.com")
     service = build('gmail', 'v1', credentials=creds)
 
     sender = "admin@multiplyfocus.com"
@@ -87,6 +77,4 @@ def send_email(email):
     message_text = "Hey There! \n We are so thrilled to have part of our journey to connect experts with advice seekers.\n Together we going to build the future with no gaps"
 
     message = create_message(sender, to, subject, message_text)
-    logger.info("--------------message created successfully-------------------")
-    logger.info("--------------calling the send message------------------")
     send_message(service, "me", message)
