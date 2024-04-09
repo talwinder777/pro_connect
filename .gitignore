@@ -11,6 +11,7 @@ static/
 media/
 migrations/
 frontend/node_modules
+backend/expertFinder_backend/waitlist_data/credentials.json
 
 # Logs and temporary files
 *.log
