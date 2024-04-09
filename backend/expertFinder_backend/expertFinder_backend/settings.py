@@ -142,7 +142,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': "/home/ubuntu/expertFinder_backend/django.log",  # Include the filename here
+            'filename': "/var/log/django.log",  # Include the filename here
         },
     },
     'loggers': {
