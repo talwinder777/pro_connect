@@ -134,7 +134,7 @@ CORS_ALLOWED_ORIGINS = [
     'https://master.dmmbr5vvb7yit.amplifyapp.com',
 ]
 
-LOG_PATH = os.path.join(BASE_DIR, '/django.log')
+LOG_PATH = os.path.join(BASE_DIR, '/expertFinder_backend/django.log')
 
 LOGGING = {
     'version': 1,
