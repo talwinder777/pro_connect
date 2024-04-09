@@ -134,7 +134,7 @@ CORS_ALLOWED_ORIGINS = [
     'https://master.dmmbr5vvb7yit.amplifyapp.com',
 ]
 
-LOG_PATH = os.path.join(BASE_DIR, '/expertFinder_backend/django.log')
+# LOG_PATH = os.path.join(BASE_DIR, '/expertFinder_backend/django.log')
 
 LOGGING = {
     'version': 1,
@@ -142,7 +142,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': LOG_PATH,  # Specify the file path here
+            'filename': "/home/ubuntu/expertFinder_backend/django.log",  # Include the filename here
         },
     },
     'loggers': {
