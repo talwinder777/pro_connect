@@ -7,6 +7,10 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
+import logging
+
+# Get a logger instance for the current module
+logger = logging.getLogger(__name__)
 
 
 from django.http import JsonResponse
@@ -35,7 +39,7 @@ def save_client_email(request):
     return JsonResponse({'success': False}, status=400)
 
 def create_message(sender, to, subject, message_text):
-    print("-----------creating message---------------")
+    logger.info("-----------creating message---------------")
     message = MIMEText(message_text)
     message['to'] = to
     message['from'] = sender
@@ -46,25 +50,25 @@ def send_message(service, user_id, message):
     try:
         message = (service.users().messages().send(userId=user_id, body=message)
                    .execute())
-        print('Message Id: %s' % message['id'])
+        logger.info('Message Id: %s' % message['id'])
         return message
     except Exception as e:
-        print('An error occurred: %s' % e)
+        logger.info('An error occurred: %s' % e)
         return None
 
 def send_email(email):
-    print("-------------------in send email function-------------------")
+    logger.info("-------------------in send email function-------------------")
     creds = None
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
     if os.path.exists('token.pickle'):
-        print("------------token file found in directory-------------")
+        logger.info("------------token file found in directory-------------")
         with open('token.pickle', 'rb') as token:
             creds = pickle.load(token)
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
-        print("---------------token file exists alreay--------------")
+        logger.info("---------------token file exists alreay--------------")
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
@@ -74,7 +78,7 @@ def send_email(email):
         # Save the credentials for the next run
         with open('token.pickle', 'wb') as token:
             pickle.dump(creds, token)
-    print("----------going to call the create_message function with service--------------")
+    logger.info("----------going to call the create_message function with service--------------")
     service = build('gmail', 'v1', credentials=creds)
 
     sender = "admin@multiplyfocus.com"
@@ -83,6 +87,6 @@ def send_email(email):
     message_text = "Hey There! \n We are so thrilled to have part of our journey to connect experts with advice seekers.\n Together we going to build the future with no gaps"
 
     message = create_message(sender, to, subject, message_text)
-    print("--------------message created successfully-------------------")
-    print("--------------calling the send message------------------")
+    logger.info("--------------message created successfully-------------------")
+    logger.info("--------------calling the send message------------------")
     send_message(service, "me", message)
