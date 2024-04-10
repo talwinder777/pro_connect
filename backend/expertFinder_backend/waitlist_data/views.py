@@ -30,7 +30,7 @@ def save_expert_email(request):
         if email:
             ExpertEmail.objects.create(email=email)
             send_email(email)
-            return JsonResponse({'success': True})
+            return JsonResponse({'success': True}, status=200)
     return JsonResponse({'success': False}, status=400)
 
 @csrf_exempt
@@ -39,7 +39,7 @@ def save_client_email(request):
         email = request.POST.get('email')
         if email:
             ClientEmail.objects.create(email=email)
-            return JsonResponse({'success': True})
+            return JsonResponse({'success': True}, status=200)
     return JsonResponse({'success': False}, status=400)
 
 def create_message(sender, to, subject, message_text):
