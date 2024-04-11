@@ -35,9 +35,9 @@ const CatchPage = () => {
             formData.append('email', email);
             let endpoint;
             if (type === 'Expert') {
-                endpoint = 'http://backend.seekexpert.ai/save_user_data/save_expert_email/';
+                endpoint = 'https://backend.seekexpert.ai/save_user_data/save_expert_email/';
             } else if (type === 'Client') {
-                endpoint = 'http://backend.seekexpert.ai/save_user_data/save_client_email/';
+                endpoint = 'https://backend.seekexpert.ai/save_user_data/save_client_email/';
             }
 
             const response = await axios.post(endpoint, formData);
