@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-v^e3u#rj01(#r$+p^7ap1po)z!p%y7zq35(wb2^$(qho=+x$ti
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['34.205.71.76']
+ALLOWED_HOSTS = ['backend.seekexpert.ai']
 
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 
 # Application definition
 
@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -135,6 +137,8 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 # LOG_PATH = os.path.join(BASE_DIR, '/expertFinder_backend/django.log')
+
+CORS_ALLOWED_ORIGINS = ['http://localhost:3001', 'http://localhost:3000', 'https://www.seekexpert.ai', 'https://seekexpert.ai']
 
 LOGGING = {
     'version': 1,

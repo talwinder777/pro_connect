@@ -1,11 +1,6 @@
-import os
-import pickle
 import base64
 from email.mime.text import MIMEText
-from google_auth_oauthlib.flow import InstalledAppFlow
-from google.auth.transport.requests import Request
 from googleapiclient.discovery import build
-from google.oauth2.credentials import Credentials
 from google.oauth2 import service_account
 import logging
 
@@ -39,7 +34,7 @@ def save_client_email(request):
         email = request.POST.get('email')
         if email:
             ClientEmail.objects.create(email=email)
-            return JsonResponse({'success': True}, status=200)
+            return JsonResponse({'success': True}, status=200) 
     return JsonResponse({'success': False}, status=400)
 
 def create_message(sender, to, subject, message_text):

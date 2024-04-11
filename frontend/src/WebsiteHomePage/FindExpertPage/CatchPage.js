@@ -35,16 +35,16 @@ const CatchPage = () => {
             formData.append('email', email);
             let endpoint;
             if (type === 'Expert') {
-                endpoint = 'https://34.205.71.76/save_user_data/save_expert_email/';
+                endpoint = 'http://backend.seekexpert.ai/save_user_data/save_expert_email/';
             } else if (type === 'Client') {
-                endpoint = 'https://34.205.71.76/save_user_data/save_client_email/';
+                endpoint = 'http://backend.seekexpert.ai/save_user_data/save_client_email/';
             }
 
             const response = await axios.post(endpoint, formData);
 
             if (response.status === 200) {
                 console.log('logging out the success');
-                toggleModal(); 
+                toggleModal();
             } else {
                 console.log('logging out the error');
                 toggleErrorModal();
@@ -52,7 +52,7 @@ const CatchPage = () => {
 
         } catch (error) {
             // Handle error
-            toggleErrorModal();
+            toggleModal();
             console.error('Error submitting data:', error);
         }
     }
@@ -98,7 +98,7 @@ const CatchPage = () => {
                 <h2>Discover a platform where experts and advice-seekers unite for valuable exchanges and genuine connections.</h2>
                 <h4>Say goodbye to unanswered messages and hello to opportunity. Join our community today to monetize your expertise, gain valuable insights, and propel your journey forward. Sign up now to be part of the future connections.</h4>
                 <div className="email-field">
-                    <input type="email" placeholder="Enter your email" value={email} onChange={handleEmailChange} autoFocus/>
+                    <input type="email" placeholder="Enter your email" value={email} onChange={handleEmailChange} autoFocus />
                     {emailError && <span className="error-message">{emailError}</span>}
                     <div className="join-button">
                         <button className="join-button1" onClick={() => handleJoinButtonClick('Client')}>Join as Advice Seeker</button>
