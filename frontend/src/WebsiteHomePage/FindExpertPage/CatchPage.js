@@ -9,7 +9,7 @@ const CatchPage = () => {
     const [email, setEmail] = useState('');
     const [userType, setUserType] = useState('');
     const [showModal, setShowModal] = useState(false);
-    const [showErrorModal, setErrorModal] = useState(false);
+    const [sendEmailError, setSendEmailError] = useState(false);
     const [emailError, setEmailError] = useState('');
 
     const handleEmailChange = (event) => {
@@ -41,17 +41,19 @@ const CatchPage = () => {
             }
 
             const response = await axios.post(endpoint, formData);
-
             if (response.status === 200) {
+                setSendEmailError(false)
                 console.log('logging out the success');
                 toggleModal();
             } else {
+                setSendEmailError(true);
                 console.log('logging out the error');
-                toggleErrorModal();
+                toggleModal();
             }
 
         } catch (error) {
             // Handle error
+            setSendEmailError(true);
             toggleModal();
             console.error('Error submitting data:', error);
         }
@@ -61,31 +63,15 @@ const CatchPage = () => {
         setShowModal(!showModal);
     };
 
-    const toggleErrorModal = () => {
-        setErrorModal(!showErrorModal);
-    }
-
     const Modal = () => {
         return (
             <div className="modal">
                 <div className="modal-content">
-                    <h2>Thank you for joining!</h2>
-                    <p>You have successfully joined as a {userType}.</p>
+                    {!sendEmailError && <h2>Thank you for joining!</h2>}
+                    {sendEmailError && <h2>Something went wrong!</h2>}
+                    {!sendEmailError && <p>You have successfully joined as a {userType}.</p>}
+                    {sendEmailError && <p>There was an error while submitting your response. Please try again.</p>}
                     <button onClick={toggleModal}>Close</button>
-                </div>
-            </div>
-        );
-    };
-
-    const ErrorModal = ({ onClose }) => {
-        return (
-            <div className="error-modal-container">
-                <div className="error-modal">
-                    <div className="error-modal-content">
-                        <h2>Error</h2>
-                        <p>There was an error while submitting your response. Please try again.</p>
-                        <button onClick={onClose}>Close</button>
-                    </div>
                 </div>
             </div>
         );
@@ -113,7 +99,6 @@ const CatchPage = () => {
         <div>
             {!showModal && <Waitlist />}
             {showModal && <Modal onClose={toggleModal} />}
-            {showErrorModal && <ErrorModal onClose={toggleErrorModal} />}
         </div>
     );
 };
